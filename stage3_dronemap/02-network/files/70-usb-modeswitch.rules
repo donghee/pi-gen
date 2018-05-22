@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0x1bbb", ATTRS{idProduct}=="0017", RUN+="sudo usb_modeswitch -W -v 1bbb -p f017 -V 1bbb -P 0017 --message-content 55534243123456788000000080000606f50402527000000000000000000000"

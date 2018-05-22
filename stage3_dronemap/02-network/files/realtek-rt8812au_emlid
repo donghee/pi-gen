@@ -1,0 +1,20 @@
+#!/bin/bash
+
+sudo apt update
+sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source && /usr/bin/rpi-source -q --tag-update
+sudo apt-get install bc git -y
+sudo rpi-source --skip-gcc
+
+#sudo rm /usr/bin/arm-linux-gnueabihf-gcc
+#sudo ln -sf /usr/bin/gcc-4.9 /usr/bin/arm-linux-gnueabihf-gcc 
+
+git clone https://github.com/emlid/8812au.git
+cd 8812au
+git checkout v4.3.21
+make CROSS_COMPILE=arm-linux-gnueabihf- ARCH=arm
+sudo insmod 8812au.ko
+sudo cp 8812au.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless
+sudo depmod
+cp rtl8812-txpower.rules /etc/udev/rules.d/rtl8812-txpower.rules
+cd ..
+rm -rf linux*

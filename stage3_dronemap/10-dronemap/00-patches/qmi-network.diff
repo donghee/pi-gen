@@ -1,0 +1,11 @@
+--- jessie-stage3_dronemap.orig/rootfs/usr/bin/qmi-network
++++ jessie-stage3_dronemap/rootfs/usr/bin/qmi-network
+@@ -334,7 +334,7 @@
+ 
+     setup_data_format
+ 
+-    START_NETWORK_ARGS="apn='$APN'"
++    START_NETWORK_ARGS="'apn=$APN'"
+     if [ -n "$APN_USER" ]; then
+         START_NETWORK_ARGS="${START_NETWORK_ARGS},username='$APN_USER'"
+         if [ -n "$APN_PASS" ]; then

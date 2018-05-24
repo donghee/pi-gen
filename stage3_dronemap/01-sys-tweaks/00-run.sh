@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+rm -f ${ROOTFS_DIR}/etc/systemd/system/dhcpcd.service.d/wait.conf
+
 install -m 644 files/wpa_supplicant.conf ${ROOTFS_DIR}/boot
 install -m 644 files/modules ${ROOTFS_DIR}/etc/modules
 install -m 644 files/cmdline.txt ${ROOTFS_DIR}/boot

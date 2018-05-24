@@ -31,5 +31,8 @@ dpkg -i /files/*.deb
 #cd ..
 #rm -rf linux*
 
+#for fastboot
+mv /etc/systemd/system/dhcpcd.service.d/wait.conf /etc/systemd/system/dhcpcd.service.d/wait.conf_
+
 EOF
 rm -rf ${ROOTFS_DIR}/files

@@ -1,12 +1,9 @@
 #!/bin/bash
 
-sudo apt update
-sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source && /usr/bin/rpi-source -q --tag-update
-sudo apt-get install bc git -y
-sudo rpi-source --skip-gcc
-
-#sudo rm /usr/bin/arm-linux-gnueabihf-gcc
-#sudo ln -sf /usr/bin/gcc-4.9 /usr/bin/arm-linux-gnueabihf-gcc 
+#sudo apt update
+#sudo wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source && /usr/bin/rpi-source -q --tag-update
+#sudo apt-get install bc git -y
+#sudo rpi-source --skip-gcc
 
 git clone https://github.com/emlid/8812au.git
 cd 8812au

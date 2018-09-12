@@ -1,0 +1,1 @@
+/usr/sbin/ntpdate -b time.google.com # change the ntp server according to your location
